@@ -5,9 +5,13 @@ Service.set('views', '/views');
 Service.use(Cors());
 Service.use(Helmet());
 dotenv.config();
-const port = 3000 || process.env.PORT;
+const { port = 3000 } = process.env.PORT;
 Service.use('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/', 'index.html'));
 });
 
-Service.listen(port, () => console.log(`app running ${port}`));
+Service.listen(port, () => {
+    const address = server.address();
+
+    console.log(`app running ${address}`)
+});
