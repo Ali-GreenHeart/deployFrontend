@@ -2,8 +2,8 @@ const { Service, dotenv, Static, Cors, Helmet } = require('@ulvimemmeedov/expres
 const path = require('path');
 Service.use(Static(path.join(__dirname, 'views')));
 Service.set('views', '/views');
-Service.use(Cors());
-Service.use(Helmet());
+// Service.use(Cors());
+// Service.use(Helmet());
 dotenv.config();
 const port = process.env.PORT || 3000;
 Service.get('/*', (req, res) => {
