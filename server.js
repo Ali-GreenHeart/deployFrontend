@@ -11,7 +11,5 @@ Service.use('/', (req, res) => {
 });
 
 Service.listen(port, () => {
-    const address = server.address();
-
-    console.log(`app running ${address}`)
+    console.log(`app running ${port}`)
 });
