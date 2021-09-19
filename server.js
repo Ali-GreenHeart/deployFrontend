@@ -5,7 +5,7 @@ Service.set('views', '/views');
 Service.use(Cors());
 Service.use(Helmet());
 dotenv.config();
-const { port = 3000 } = process.env.PORT;
+const port = process.env.PORT || 3000;
 Service.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/', 'index.html'));
 });
